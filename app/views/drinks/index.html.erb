@@ -18,6 +18,7 @@
   <tbody>
     <% @drinks.each do |drink| %>
       <tr>
+      <td><%= image_tag drink.image.url(:medium) %></td>
         <td><%= drink.name %></td>
         <td><%= drink.ingredients %></td>
         <td><%= drink.taste %></td>
