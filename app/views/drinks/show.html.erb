@@ -1,34 +1,42 @@
-<%= image_tag @drink.image.url(:medium) %>
-
-<p>
-  <strong>Name:</strong>
-  <%= @drink.name %>
-</p>
-
-<p>
-  <strong>Ingredients:</strong>
-  <%= @drink.ingredients %>
-</p>
-
-<p>
-  <strong>Taste:</strong>
-  <%= @drink.taste %>
-</p>
-
-<p>
-  <strong>Bar name:</strong>
-  <%= @drink.bar_name %>
-</p>
-
-<p>
-  <strong>Bar location:</strong>
-  <%= @drink.bar_location %>
-</p>
-
-<p>
-  <strong>Bartender:</strong>
-  <%= @drink.bartender %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4"></div>
+        <%= image_tag @drink.image.url(:medium) %>
+        <div class="table-responsive">
+          <table class-"table">
+            <tbody>
+              <tr>
+              <td><strong>Name:</strong></td>
+              <td><%= @drink.name %></td>
+              </tr>
+              <tr>
+              <td><strong>Ingredients:</strong></td>
+              <td><%= @drink.ingredients %></td>
+              </tr>
+              <tr>
+              <td><strong>Taste:</strong></td>
+              <td><%= @drink.taste %></td>
+              </tr>
+              <tr>
+              <td><strong>Bar name:</strong></td>
+              <td><%= @drink.bar_name %></td>
+              </tr>
+              <tr>
+              <td><strong>Bar location:</strong></td>
+              <td><%= @drink.bar_location %></td>
+              </tr>
+              <tr>
+              <td><strong>Bartender:</strong></td>
+              <td><%= @drink.bartender %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_drink_path(@drink) %> |
 <%= link_to 'Back', drinks_path %>
