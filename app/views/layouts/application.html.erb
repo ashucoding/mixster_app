@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MixsterApp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+<head>
+  <title>MixsterApp</title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'layouts/header' %>
 
-  <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag(:div, msg, class: "alert alert-info") %>
-      <% end %>
-        <%= yield %>
-      </div>
-  </body>
+  <div class="container">
+    <% flash.each do |name, msg| %>
+    <%= content_tag(:div, msg, class: "alert alert-info") %>
+  <% end %>
+    <%= yield %>
+  </div>
+  
+</body>
 </html>

@@ -1,10 +1,10 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-4"></div>
+      <div class="col-md-4">
         <%= image_tag @drink.image.url(:medium) %>
         <div class="table-responsive">
-          <table class-"table">
+          <table class="table">
             <tbody>
               <tr>
               <td><strong>Name:</strong></td>
@@ -33,10 +33,10 @@
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </div>
+        </div>
+        </div>
+        </div>
 
 <%= link_to 'Edit', edit_drink_path(@drink) %> |
 <%= link_to 'Back', drinks_path %>
