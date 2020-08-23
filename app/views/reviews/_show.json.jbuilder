@@ -1,0 +1,1 @@
+json.array! @reviews, :id, :rating, :comment, :create_at, :update_at

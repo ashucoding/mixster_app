@@ -32,11 +32,43 @@
               </tr>
             </tbody>
           </table>
+          <%= link_to "Write a Review",new_drink_review_path(@drink)%>
         </div>
+      </div>
+          <div class="col-md-7 col-md-offset-1 overlay-text">
+          <h1 class="review_title"><%= @drink.name %></h1>
+    
+            <p><%=@drink_description%></p>
+
+            <% if @reviews.blank? %>
+            <h3>This drink has not been reviewed yet, Would you like to write the first review?</h3>
+            <%= link_to "Write a review", new_drink_review_path(@drink), class: "btn btn-danger" %>
+            <% else %>
+            <% @reviews.each do |review| %>
+            <div class="reviews">
+              <div id="starRating" class="star-rating" data-score = <%= review.rating %> ></div>
+              # <p><%= review.rating %></p>
+              <p><%= review.comment %></p>
+          </div>
+            <% end %>
+            <% end %>
         </div>
         </div>
         </div>
         </div>
 
+
 <%= link_to 'Edit', edit_drink_path(@drink) %> |
 <%= link_to 'Back', drinks_path %>
+
+<div>
+
+<script>
+$('#starRating').raty({
+  click: function(score, evt) {
+    $('#starRating').raty('readOnly', true);
+  }
+});
+</script>
+
+</div>

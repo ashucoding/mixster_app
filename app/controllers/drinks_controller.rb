@@ -8,6 +8,7 @@ class DrinksController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(drink_id: @drink.id).order("created_at DESC")
   end
 
   def new

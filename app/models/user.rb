@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :drinks
   has_many :reviews, dependent: :destroy
+  has_many :drink_reviews, through: :drinks, source: :reviews
+  has_many :reviewed_drinks, through: :reviews, source: :drink
+  scope :five_star_drinks, -> {joins(drinks: [:reviews]).where("reviews.rating=5")}
 end
