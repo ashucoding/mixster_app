@@ -3,12 +3,23 @@ class DrinksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   
 
+  def five_star_drinks
+    @users = User.five_star_drinks
+    render 'users/index'
+  end
+
   def index
     @drinks = Drink.all
   end
 
   def show
     @reviews = Review.where(drink_id: @drink.id).order("created_at DESC")
+
+    if @reviews.blank?
+      @avg_review = 0
+    else
+      @avg_review = @reviews.average(:rating).round(2)
+    end
   end
 
   def new
