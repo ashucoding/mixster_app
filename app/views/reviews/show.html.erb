@@ -23,7 +23,7 @@
 
 <%= link_to 'Back', drinks_path %> |
 
-<%= link_to 'Edit', edit_drink_review_path(@review) %> |
+<%= link_to 'Edit', edit_drink_review_path(@review.drink, @review) %> |
 
 <%= link_to "Delete", [@review.drink, @review], method: "delete", data: { confirm: "Are you sure?", disable_with: "Processing..." } %>
 
