@@ -93,6 +93,14 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    elasticsearch (7.9.0)
+      elasticsearch-api (= 7.9.0)
+      elasticsearch-transport (= 7.9.0)
+    elasticsearch-api (7.9.0)
+      multi_json
+    elasticsearch-transport (7.9.0)
+      faraday (~> 1)
+      multi_json
     erubi (1.9.0)
     execjs (2.7.0)
     faraday (1.0.1)
@@ -212,6 +220,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    searchkick (4.4.1)
+      activemodel (>= 5)
+      elasticsearch (>= 6)
+      hashie
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -279,6 +291,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   sass-rails (>= 6)
+  searchkick (~> 4.4, >= 4.4.1)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)

@@ -26,7 +26,6 @@ class ReviewsController < ApplicationController
     @review = @drink.reviews.build(review_params)
     @review.user_id = current_user.id
     # @review.drink_id = @drink_id
-
     respond_to do |format|
       if @review.save
         #redirect_to @drink
@@ -55,10 +54,10 @@ class ReviewsController < ApplicationController
 
   
   def destroy
+    drink = @review.drink
     @review.destroy
-    #redirect_to root_path
     respond_to do |format|
-      format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
+      format.html { redirect_to drink_url(drink), notice: 'Review was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

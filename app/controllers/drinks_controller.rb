@@ -1,6 +1,14 @@
 class DrinksController < ApplicationController
   before_action :set_drink, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+
+  def search
+    if params[:search].present?
+      @drinks = Drink.search(params[:search])
+    else
+      @drinks = Drink.all
+  end
+end
   
 
   def five_star_drinks
@@ -76,3 +84,4 @@ class DrinksController < ApplicationController
       params.require(:drink).permit(:name, :ingredients, :taste, :bar_name, :bar_location, :bartender, :image)
     end
 end
+

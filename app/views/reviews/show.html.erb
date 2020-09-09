@@ -1,21 +1,34 @@
 
 <p id="notice"><%= notice %></p>
 
+<h1 style="color:blue;">Customer Review</h1>
+
 <p>
+  <p style="color:white;"</p>
   <strong>Rating:</strong>
   <%= @review.rating %>
 </p>
 
 <p>
+<p style="color:white;"</p>
   <strong>Comment:</strong>
   <%= @review.comment %>
 </p>
 
 <p> 
+<p style="color:white;"</p>
   <strong>User:</strong>
   <%= @review.user.email %>
  </p>
 
-<%= link_to 'Back', drinks_path %>
+<%= link_to 'Back', drinks_path %> |
 
-<%= link_to 'Edit', edit_drink_review_path(@review) %>
+<%= link_to 'Edit', edit_drink_review_path(@review) %> |
+
+<%= link_to "Delete", [@review.drink, @review], method: "delete", data: { confirm: "Are you sure?", disable_with: "Processing..." } %>
+
+
+
+
+
+
